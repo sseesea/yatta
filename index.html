@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Yatta~</title>
+<meta name="description" content="The website for making Shikanoko-san, do the Yatta.">
+<meta name="keywords" content="yatta, Yatta, Shikanoko, Koshitan, Shikanokonokonoko, Koshitantan, deer, nara">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<div id="content">
+<h1>Yatta~~</h1>
+<h2>Make Shikanoko-san Yatta!</h2>
+<h3>Made by sseesea (@sseesea.cos) ~ <a href="https://www.instagram.com/sseesea.cos?igsh=Z3JjeHlwaGZwc3pw" target="_blank"><i class='bx bxl-instagram'></i> </a> </h3>
+<div class="container">
+    <img src="Shikanoko.jpg" id="idle">
+    <video id="video" width="640" height="360" controls preload="auto" style="display: none;">
+        <source src="yattavideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="counter-container">
+        <p>She has been Yatta~</p>
+        <br/>
+        <br/>
+        <p id="counter">0</p>
+        <br/>
+        <br/>
+        <p id="counter-times">times</p>
+        <button id="counter-button">
+            Yatta!
+        </button>
+    </div>
+</div>
+</div>
+
+<script>
+    let counter = 0;
+    
+    function counterClick() {
+        // Get references to the image and video elements
+        const img = document.getElementById('idle');
+        const video = document.getElementById('video');
+    
+        // Hide the image and replace it with the video
+        img.style.display = 'none';  // Hide the image
+        video.style.display = 'block';  // Show the video element in the same location as the image
+        
+        // Reset the video to the start and play it
+        video.currentTime = 0;  // Restart the video from the beginning
+        video.play();  // Play the video
+    
+        // Update the counter
+        counter++;
+        document.getElementById('counter').textContent = counter;
+    }
+    
+    // Add event listener to the button
+    document.getElementById('counter-button').addEventListener('click', counterClick);
+    </script>
+</body>
+</html>
